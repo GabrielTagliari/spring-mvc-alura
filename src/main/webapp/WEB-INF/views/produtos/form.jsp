@@ -10,7 +10,8 @@
 <title>Livro de Java e Android e muito mais</title>
 </head>
 <body>
-	<form:form action="${s:mvcUrl('PC#gravar').build()}" method="POST" commandName="produto">
+	<form:form action="${s:mvcUrl('PC#gravar').build()}" method="POST" 
+			commandName="produto" enctype="multipart/form-data">
 		<div>
 			<label>Título</label>
 			<form:input path="titulo"/>
@@ -39,6 +40,10 @@
 	        </div>
 	    </c:forEach>
 		<button type="submit">Cadastrar</button>
+		<div>
+			<label>Sumário</label>
+			<input type="file" name="sumario" />
+		</div>
 	</form:form>
 </body>
 </html>
