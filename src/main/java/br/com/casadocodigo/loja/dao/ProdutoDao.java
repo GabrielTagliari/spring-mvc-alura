@@ -12,7 +12,7 @@ import br.com.casadocodigo.loja.model.Produto;
 
 @Repository
 @Transactional
-public class ProdutoDAO {
+public class ProdutoDao {
 	
 	@PersistenceContext
 	private EntityManager em;
@@ -23,5 +23,11 @@ public class ProdutoDAO {
 
 	public List<Produto> listar() {
 		return em.createQuery("select p from Produto p", Produto.class).getResultList();
+	}
+
+	public Produto find(Integer id) {
+		StringBuffer query = new StringBuffer();
+		query.append("select distinct(p) from Produto p join fetch p.precos where p.id = :id");
+		return em.createQuery(query.toString(), Produto.class).setParameter("id", id).getSingleResult();
 	}
 }
