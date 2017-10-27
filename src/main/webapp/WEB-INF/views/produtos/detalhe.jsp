@@ -126,7 +126,7 @@
    <body class="produto">
       <header role="banner" class="cabecalhoPrincipal container">
          <h1 class="cabecalhoPrincipal-titulo">
-            <a tabindex="1" href="/" class="cabecalhoPrincipal-linkTitulo">
+            <a tabindex="1" href="${s:mvcUrl('HC#index').build()}" class="cabecalhoPrincipal-linkTitulo">
                <svg
                   class="logo" role="img" aria-labelledby="altLogo" width="157px"
                   height="55px" viewBox="-181 211.4 207.5 55"
