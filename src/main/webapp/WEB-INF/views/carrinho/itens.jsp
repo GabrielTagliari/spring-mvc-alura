@@ -233,13 +233,12 @@
          </p>
          <section class="infoSection container">
             <h2 class="infoSection-titulo">Seu carrinho</h2>
-            <form class="formularioDoCarrinho" action="${s:mvcUrl('CCC#itens').build()}" method="post">
                <table class="formularioDoCarrinho-tabela">
                   <thead class="formularioDoCarrinho-cabecalho">
                      <tr>
                         <th></th>
                         <th class="formularioDoCarrinho-cabecalho-item">Item</th>
-                        <th class="formularioDoCarrinho-cabecalho-item formularioDoCarrinho-cabecalho-preco">PreÃ§o</th>
+                        <th class="formularioDoCarrinho-cabecalho-item formularioDoCarrinho-cabecalho-preco">Preço</th>
                         <th class="formularioDoCarrinho-cabecalho-item">Qtd</th>
                         <th class="formularioDoCarrinho-cabecalho-item">Total</th>
                         <th></th>
@@ -320,7 +319,6 @@
                   Buscar
                   </button>
                </fieldset>
-            </form>
          </div>
       </main>
       <footer class="rodape">
