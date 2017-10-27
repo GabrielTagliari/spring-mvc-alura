@@ -267,9 +267,11 @@
                            </td>
                            <td class="formularioDoCarrinho-item formularioDoCarrinho-item-precoTotal" title="PreÃ§o unitÃ¡rio: R$69,90">${carrinhoCompras.getTotal(item) }</td>
                            <td class="formularioDoCarrinho-item">
-            <form action="" method="post">
-            <input type="image" src="//cdn.shopify.com/s/files/1/0155/7645/t/227/assets/trash.png?14829254290399893750" alt="Excluir" title="Excluir">
-            </form>
+            <form action="${s:mvcUrl('CCC#remover').arg(0, item.produto.id).arg(1, item.tipoPreco).build()}" method="post">
+				<input type="image"
+					src="//cdn.shopify.com/s/files/1/0155/7645/t/227/assets/trash.png?14829254290399893750"
+					alt="Excluir" title="Excluir">
+			</form>
             </td>
             </tr>
             </c:forEach>
@@ -283,8 +285,8 @@
 						Finalizar<span
 							class="formularioDoCarrinho-finalizar-botao-texto"
 							role="presentation"> compra</span>
-					</button>
-				</form>
+				</button>
+			</form>
             </td>
             <td class="formularioDoCarrinho-rodape-item">
             ${carrinhoCompras.total}
