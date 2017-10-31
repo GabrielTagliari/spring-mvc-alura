@@ -1,4 +1,5 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <header role="banner" class="cabecalhoPrincipal container">
    <h1 class="cabecalhoPrincipal-titulo">
@@ -101,21 +102,23 @@
    <div id="navegacaoCabecalho" class="cabecalhoPrincipal-navegacao">
       <div class="cabecalhoPrincipal-categoriasEBusca" role="presentation">
          <nav role="navigation" aria-label="Categorias de livros" class="colecoesDaCDC">
-            <li class="colecoesDaCDC-colecaoItem"><a href="/collections/livros-de-java" class="colecoesDaCDC-colecaoLink"> Java </a></li>
-            <li class="colecoesDaCDC-colecaoItem"><a href="/collections/livros-de-desenvolvimento-web" class="colecoesDaCDC-colecaoLink"> Web </a></li>
-            <li class="colecoesDaCDC-colecaoItem"><a href="/collections/livros-de-front-e-design" class="colecoesDaCDC-colecaoLink"> Front e Design </a></li>
-            <li class="colecoesDaCDC-colecaoItem"><a href="/collections/livros-de-games" class="colecoesDaCDC-colecaoLink"> Games </a></li>
-            <li class="colecoesDaCDC-colecaoItem"><a href="/collections/livros-de-mobile" class="colecoesDaCDC-colecaoLink"> Mobile </a></li>
-            <li class="colecoesDaCDC-colecaoItem"><a href="/collections/livros-de-startups" class="colecoesDaCDC-colecaoLink"> Startups </a></li>
-         </nav>
-         <form role="search" aria-labelledby="rotuloBuscaPrincipal" action="/search" method="GET" class="buscaPrincipal">
-            <label id="rotuloBuscaPrincipal" class="buscaPrincipal-label" for="campoBuscaPrincipal"> Busque por autor, título, conteúdo... </label>
-            <input type="hidden" name="type" value="product">
-            <input id="campoBuscaPrincipal" class="buscaPrincipal-campo" placeholder="O que voc� procura?" type="search" name="q" required aria-required>
-            <!-- 
-               -->
-            <button class="buscaPrincipal-submit" type="submit">Buscar</button>
-         </form>
+            <li class="colecoesDaCDC-colecaoItem"><a href="/collections/livros-de-java" class="colecoesDaCDC-colecaoLink"><fmt:message key="navegacao.categoria.java" /></a></li>
+            <li class="colecoesDaCDC-colecaoItem"><a href="/collections/livros-de-desenvolvimento-web" class="colecoesDaCDC-colecaoLink"><fmt:message key="navegacao.categoria.web" /></a></li>
+            <li class="colecoesDaCDC-colecaoItem"><a href="/collections/livros-de-front-e-design" class="colecoesDaCDC-colecaoLink"><fmt:message key="navegacao.categoria.front_end" /></a></li>
+            <li class="colecoesDaCDC-colecaoItem"><a href="/collections/livros-de-games" class="colecoesDaCDC-colecaoLink"><fmt:message key="navegacao.categoria.games" /></a></li>
+            <li class="colecoesDaCDC-colecaoItem"><a href="/collections/livros-de-mobile" class="colecoesDaCDC-colecaoLink"><fmt:message key="navegacao.categoria.mobile" /></a></li>
+            <li class="colecoesDaCDC-colecaoItem"><a href="/collections/livros-de-startups" class="colecoesDaCDC-colecaoLink"><fmt:message key="navegacao.categoria.startups" /></a></li>
+			<li class="colecoesDaCDC-colecaoItem">
+				<a href="?locale=pt_BR" class="colecoesDaCDC-colecaoLink" rel="nofollow"> 
+					<fmt:message key="menu.pt" />
+				</a>
+			</li>
+			<li class="colecoesDaCDC-colecaoItem">
+				<a href="?locale=en_US" class="colecoesDaCDC-colecaoLink" rel="nofollow"> 
+					<fmt:message key="menu.en" />
+				</a>
+			</li>
+			</nav>
       </div>
       <a tabindex="2" class="cabecalhoPrincipal-itemNavegacao cabecalhoPrincipal-mostraCategoriasEBusca" href="#navegacaoCabecalho"> <img class="cabecalhoPrincipal-iconeItemNavegacao" src="//cdn.shopify.com/s/files/1/0155/7645/t/227/assets/search.svg?14829254290399893750" alt="Abrir navegação por categorias e busca">
       </a>
