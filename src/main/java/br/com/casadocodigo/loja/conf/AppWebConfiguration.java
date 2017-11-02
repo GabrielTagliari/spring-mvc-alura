@@ -124,11 +124,12 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 		return new CookieLocaleResolver();
 	}
 	
+	@Bean
 	public MailSender mailSender() {
 		JavaMailSenderImpl mailSenderImpl = new JavaMailSenderImpl();
 		mailSenderImpl.setHost("smtp.gmail.com");
-		mailSenderImpl.setUsername("alura.spring@gmail.com");
-		mailSenderImpl.setPassword("alura2015");
+		mailSenderImpl.setUsername("");
+		mailSenderImpl.setPassword("");
 		mailSenderImpl.setPort(587);
 		
 		Properties mailProperties = new Properties();

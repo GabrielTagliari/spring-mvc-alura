@@ -40,7 +40,7 @@ public class PagamentoController {
 			String response = null;
 			try {
 				response = restTemplate.postForObject(uri, new DadosPagamento(carrinho.getTotal()), String.class);
-				enviaEmailCompraProduto(usuario);
+				//enviaEmailCompraProduto(usuario);
 				model.addFlashAttribute("sucesso", response);
 				return new ModelAndView("redirect:/produtos");
 			} catch (HttpClientErrorException e) {
@@ -54,8 +54,7 @@ public class PagamentoController {
 	private void enviaEmailCompraProduto(Usuario usuario) {
 		SimpleMailMessage email = new SimpleMailMessage();
 		email.setSubject("Compra finalizada com sucesso!");
-		//email.setTo(usuario.getEmail());
-		email.setTo("gabriel.tagliari93@gmail.com");
+		email.setTo(usuario.getEmail());
 		email.setText("Compra aprovada com sucesso no valor de " + carrinho.getTotal());
 		email.setFrom("compras@casadocodigo.com.br");
 		

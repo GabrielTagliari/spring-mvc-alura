@@ -25,7 +25,7 @@ public class ProdutoDao {
 	}
 
 	public List<Produto> listar() {
-		return em.createQuery("select p from Produto p", Produto.class).getResultList();
+		return em.createQuery("select distinct(p) from Produto p join fetch p.precos", Produto.class).getResultList();
 	}
 
 	public Produto find(Integer id) {
